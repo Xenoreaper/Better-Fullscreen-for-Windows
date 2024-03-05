@@ -2,10 +2,13 @@
 Makes fullscreen applications utilize another virtual desktop instead of forcing themselves over all other applications
 
 ## To Do
-- make windows consistently move to a new desktop
-- make windows actually move back to the primary desktop
-- solve issue of windows closing all together upon leaving fullscreen or changing their handle, hindering the removal of added desktops
-- make program not throw you back onto a different desktop because you're switching to another one
+~~- make windows consistently move to a new desktop~~
+~~- make windows actually move back to the primary desktop~~
+~~- solve issue of windows closing all together upon leaving fullscreen or changing their handle, hindering the removal of added desktops~~
+~~- make program not throw you back onto a different desktop because you're switching to another one~~
+
+## Issues
+- Firefox uses different handles??? Multiple instances of Firefox cause handle problems
 
 ## Changelog
 ### 0.1.3
