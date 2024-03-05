@@ -177,6 +177,7 @@ while True:
             if is_fullscreen(window_handles[x]) == False:
                 print("removing desktop: " + str(x+1))
                 remove_desktop(x+1)
+                break
         continue
 
     
