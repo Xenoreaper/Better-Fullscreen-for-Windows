@@ -6,6 +6,7 @@ Makes fullscreen applications utilize another virtual desktop instead of forcing
 - ~~make windows actually move back to the primary desktop~~
 - ~~solve issue of windows closing all together upon leaving fullscreen or changing their handle, hindering the removal of added desktops~~
 - ~~make program not throw you back onto a different desktop because you're switching to another one~~
+- make multiple instances of Firefox work
 
 ## Issues
 - Firefox uses different handles??? Multiple instances of Firefox cause handle problems
