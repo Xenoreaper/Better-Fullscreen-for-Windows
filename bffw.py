@@ -40,10 +40,15 @@ def get_full_screen_window_handle(): # get handle of fullscreen window
     win32gui.EnumWindows(callback, windows)
     return windows[0] if windows else None
 
-#def is_fullscreen(hwnd): # check if specific window is fullscreen
-#    window_rect = win32gui.GetWindowRect(hwnd)
-#
-#    return full_screen_rect == window_rect
+def is_fullscreen(hwnd): # check if specific window is fullscreen
+    rect = win32gui.GetWindowRect(hwnd)
+
+    if rect == full_screen_rect:
+        return True
+    elif rect != full_screen_rect:
+        return False
+    else:
+        return -1
 
 counter = 1
 
@@ -51,6 +56,7 @@ def move_window(window, desktop):
     vda.CreateDesktop()
     vda.MoveWindowToDesktopNumber(window, desktop)
     vda.GoToDesktopNumber(desktop)
+    #vda.SetDesktopName(desktop, get_full_screen_window_name())
     window_handles.append(window)
     #window_desktops.append(desktop)
     
@@ -128,9 +134,61 @@ while True:
                 # desktop = 1 == 0+1 and 
 '''
 
-prev_window_handle = [0,0]
-prev_window_name = ["void", "void"]
+#prev_window_handle = [0,0]
+#prev_window_name = ["void", "void"]
 
+prev_window_handle = 0
+prev_window_name = "void"
+
+while True:
+    desktop_count = vda.GetDesktopCount()
+    window_name = get_full_screen_window_name()
+    window_handle = get_full_screen_window_handle()
+
+    if prev_window_name == window_name and prev_window_handle != window_handle:
+        print("window error")
+        prev_equal = True
+    else:
+        prev_equal = False
+
+    if None == window_handle or window_name == "" or window_name == "Virtual desktop hotkey switching preview" or prev_equal == True:
+        ignored_window = True
+    else:
+        ignored_window = False
+
+    print(vda.GetCurrentDesktopNumber())
+    #if desktop_count > 1:
+    #    print("> " + str(vda.IsWindowOnCurrentVirtualDesktop(window_handles[vda.GetCurrentDesktopNumber()-1])))
+    if keyboard.is_pressed('q'): # close program
+        print("quitting")
+        break
+    elif keyboard.is_pressed('w'):
+        print("removing all desktops")
+        for i in range(desktop_count-1):
+            force_remove_desktop(1)
+    elif window_handle not in window_handles and ignored_window == False:
+        move_window(window_handle, desktop_count)
+        print("window: " + str(window_handle) + " moved to desktop: " + str(desktop_count))
+        print(len(window_handles))
+    else:
+        for x in range(desktop_count-1):
+            print("> " + str(vda.IsWindowOnDesktopNumber(window_handles[x], x+1)))
+            #if vda.IsWindowOnDesktopNumber(window_handles[x], x+1) != 1:
+            if is_fullscreen(window_handles[x]) == False:
+                print("removing desktop: " + str(x+1))
+                remove_desktop(x+1)
+        continue
+
+    
+
+    prev_window_handle = window_handle
+    prev_window_name = window_name
+
+
+
+
+
+'''
 while True:
     desktop_count = vda.GetDesktopCount()
     window_name = get_full_screen_window_name()
@@ -140,13 +198,18 @@ while True:
     if None == window_handle or window_name == "" or window_name == "Virtual desktop hotkey switching preview":
         ignored_window = True
         print("ignored window")
+        print(desktop_count)
+        if 1 < desktop_count:
+            print(vda.IsWindowOnCurrentVirtualDesktop(window_handles[vda.GetCurrentDesktopNumber()-1]))
+            print(window_handles[vda.GetCurrentDesktopNumber()-1])
+        print(vda.GetCurrentDesktopNumber())
     else:
         ignored_window = False
-        print(str(window_name) + " --- " + str(window_handle) + " <<< " + str(prev_window_name[0]) + " --- " + str(prev_window_handle[0]))
-        print(str(vda.GetCurrentDesktopNumber()) + " | " + str(vda.GetCurrentDesktopNumber()+1) + " of " + str(desktop_count))
+        #print(str(window_name) + " --- " + str(window_handle) + " <<< " + str(prev_window_name[0]) + " --- " + str(prev_window_handle[0]))
+        #print(str(vda.GetCurrentDesktopNumber()) + " | " + str(vda.GetCurrentDesktopNumber()+1) + " of " + str(desktop_count))
 
-    if prev_window_name[0] == window_name:
-        print("same name")
+    #if prev_window_name[0] == window_name:
+        #print("same name")
 
     if prev_window_name[0] == window_name and prev_window_handle[0] != window_handle:
         print("window error")
@@ -158,9 +221,26 @@ while True:
     else:
         prev_equal = False
 
+
+    if keyboard.is_pressed('q'): # close program
+        break
+    elif keyboard.is_pressed('w'):
+        for i in range(desktop_count-1):
+            force_remove_desktop(1)
+    elif vda.GetCurrentDesktopNumber() != 0 and vda.IsWindowOnCurrentVirtualDesktop(window_handles[vda.GetCurrentDesktopNumber()-1]) != 1:
+        remove_desktop(vda.GetCurrentDesktopNumber())
+    elif window_handle not in window_handles and ignored_window == False:
+        move_window(window_handle, desktop_count)
+        print("window: " + str(window_handle) + " moved to desktop: " + str(desktop_count))
+    else:
+        #print("nothing to do")
+        continue
+'''
+    
+
     
     #print(for x in range(len(window_handles)): if window_handles[x] == window_handle: vda.IsWindowOnDesktopNumber(window_handle, x))
-
+'''
     if keyboard.is_pressed('q'): # close program
         break
     elif keyboard.is_pressed('w'):
@@ -178,13 +258,19 @@ while True:
     elif vda.GetCurrentDesktopNumber() != 0 and prev_equal == True: #elif vda.GetCurrentDesktopNumber() != 0 and window_handle not in window_handles:
         remove_desktop(vda.GetCurrentDesktopNumber())
         print("desktop removed")
+    '''
 
-    prev_window_handle[0] = prev_window_handle[1]
-    prev_window_handle[1] = window_handle
-    prev_window_name[0] = prev_window_name[1]
-    prev_window_name[1] = window_name
-    if window_name == "":
-        prev_window_name[1] = "void"
+'''
+    else:
+        move_window(window_handle, desktop_count)
+        print("new window moved")'''
+
+    #prev_window_handle[0] = prev_window_handle[1]
+    #prev_window_handle[1] = window_handle
+    #prev_window_name[0] = prev_window_name[1]
+    #prev_window_name[1] = window_name
+    #if window_name == "":
+    #    prev_window_name[1] = "void"
     
 
 
