@@ -159,7 +159,7 @@ while True:
     print(vda.GetCurrentDesktopNumber())
     #if desktop_count > 1:
     #    print("> " + str(vda.IsWindowOnCurrentVirtualDesktop(window_handles[vda.GetCurrentDesktopNumber()-1])))
-    if keyboard.is_pressed('q'): # close program
+    if keyboard.is_pressed('ctrl') and keyboard.is_pressed('shift') and keyboard.is_pressed('F11'): # close program
         print("quitting")
         break
     elif keyboard.is_pressed('w'):
