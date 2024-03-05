@@ -8,6 +8,7 @@ Makes fullscreen applications utilize another virtual desktop instead of forcing
 - ~~make program not throw you back onto a different desktop because you're switching to another one~~
 - make multiple instances of Firefox work
 - solve issue of invalid window handles being used
+- remove desktops and window handles if they become invalid (due to program closure)
 
 ## Issues
 - Firefox uses different handles??? Multiple instances of Firefox cause handle problems
