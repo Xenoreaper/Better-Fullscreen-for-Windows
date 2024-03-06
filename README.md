@@ -11,6 +11,7 @@ Makes fullscreen applications utilize another virtual desktop instead of forcing
 - ~~remove desktops and window handles if they become invalid (due to program closure)~~
 - improve logging
 - make usage easier
+- Overlay to switch through windows like Alt+Tab, replacing Win+Tab
 
 ## Issues
 - Steam has a weird condition where it closes and immediately reopens in big picture, causing it to not be caught and moved correctly again
