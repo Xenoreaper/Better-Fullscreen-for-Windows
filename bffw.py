@@ -4,9 +4,10 @@ Better Fullscreen for Windows (bffw.py)
 This program provides improved fullscreen functionality for Windows.
 It automatically moves fullscreen applications to separate virtual desktops and moves them back when leaving fullscreen mode.
 
+
 Author: Xenoreaper
-Version: 0.1.3
-Last Modified: 2024-03-05
+Version: 0.2.2
+Last Modified: 2024-03-06
 License: MIT
 
 Includes:
@@ -79,7 +80,7 @@ def remove_desktop(desktop): # remove desktop and remove window from list
 
 def force_remove_desktops(): # indiscriminately remove all desktops and clear the window list (probably a stump)
     for desktop in range(vda.GetDesktopCount()):
-        vda.RemoveDesktop(desktop, 0)
+        vda.RemoveDesktop(1, 0)
     window_handles.clear()
 
 prev_window_handle = 0
