@@ -14,6 +14,7 @@ Makes fullscreen applications utilize another virtual desktop instead of forcing
 - Overlay to switch through windows like Alt+Tab, replacing Win+Tab
 - program hides in system tray
 - startup at boot
+- ignore list
 
 ## Issues
 - Steam has a weird condition where it closes and immediately reopens in big picture, causing it to not be caught and moved correctly again
