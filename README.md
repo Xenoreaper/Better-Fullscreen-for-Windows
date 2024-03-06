@@ -17,18 +17,7 @@ Makes fullscreen applications utilize another virtual desktop instead of forcing
 - Steam has a weird condition where it closes and immediately reopens in big picture, causing it to not be caught and moved correctly again
 
 ## Changelog
-### 0.1.3
-Changed
-- Exit keybind from Q to Ctrl+Shift+F11
-### 0.1.2
-Fixed
-- can now handle multiple fullscreen windows (as long as it's not more than one instance of Firefox)
-### 0.1.1
-Fixed
-- can now handle a single fullscreen window
-### 0.1.0
-**Initial Upload**
-Added bffw.py (Better Fullscreen for Windows) and VirtualDesktopAccessor.dll
+see https://github.com/Xenoreaper/Better-Fullscreen-for-Windows/blob/main/CHANGELOG.md
 
 ## Includes
 ### [VirtualDesktopAccessor by Ciantic](https://github.com/Ciantic/VirtualDesktopAccessor)
