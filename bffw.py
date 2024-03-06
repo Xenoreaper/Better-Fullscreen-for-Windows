@@ -21,8 +21,8 @@ import keyboard
 
 c_bool = ctypes.c_bool
 c_int = ctypes.c_int
-#vda = ctypes.WinDLL("./VirtualDesktopAccessor.dll") # Load the DLL in cmd
-vda = ctypes.WinDLL(".\\Better Fullscreen for Windows\\VirtualDesktopAccessor.dll") # Load the DLL in vsc
+vda = ctypes.WinDLL("./VirtualDesktopAccessor.dll") # Load the DLL in cmd
+#vda = ctypes.WinDLL(".\\Better Fullscreen for Windows\\VirtualDesktopAccessor.dll") # Load the DLL in vsc
 user32 = ctypes.windll.user32
 user32.SetProcessDPIAware() # optional, makes functions return real pixel numbers instead of scaled values
 
@@ -100,7 +100,7 @@ while True:
     else:
         ignored_window = False
 
-    print(vda.GetCurrentDesktopNumber())
+    #print(vda.GetCurrentDesktopNumber())
     
     if keyboard.is_pressed('ctrl') and keyboard.is_pressed('shift') and keyboard.is_pressed('F11'): # close program
         force_remove_desktops()
@@ -113,13 +113,14 @@ while True:
         window_handles.append(None)
     else: # if window is in list, check if it's still fullscreen and where it belongs
         for x in range(desktop_count-1):
-            print("> " + str(vda.IsWindowOnDesktopNumber(window_handles[x], x+1)))
+            #print("> " + str(vda.IsWindowOnDesktopNumber(window_handles[x], x+1)))
             try:
                 if is_fullscreen(window_handles[x]) == False: # if window is not fullscreen, remove its desktop
                     print("removing desktop: " + str(x+1))
                     remove_desktop(x+1)
                     break
             except: # if window is not found, remove its desktop
+                print("removing desktop: " + str(x+1))
                 remove_desktop(x+1)
                 break
         continue
