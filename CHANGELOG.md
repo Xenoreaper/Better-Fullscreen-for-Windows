@@ -8,6 +8,7 @@
 - Firefox not being able to have more than one instance
 ### Removed
 - unnecessary comments
+- removed force close key W
 ## [0.1.3] - 2024-03-05
 ### Changed
 - Exit keybind from Q to Ctrl+Shift+F11
