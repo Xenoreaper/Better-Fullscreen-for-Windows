@@ -1,8 +1,13 @@
 # Change Log
-## [0.2.0]
+## [0.2.0] - 2024-03-06
 ### Added
+- Program header
+- A few comments
 ### Changed
+- removed unnecessary comments
 ### Fixed
+- Invalid handles crashing the program
+- Firefox not being able to have more than one instance
 ## [0.1.3] - 2024-03-05
 ### Changed
 - Exit keybind from Q to Ctrl+Shift+F11
