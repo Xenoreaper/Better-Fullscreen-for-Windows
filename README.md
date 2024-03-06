@@ -6,13 +6,14 @@ Makes fullscreen applications utilize another virtual desktop instead of forcing
 - ~~make windows actually move back to the primary desktop~~
 - ~~solve issue of windows closing all together upon leaving fullscreen or changing their handle, hindering the removal of added desktops~~
 - ~~make program not throw you back onto a different desktop because you're switching to another one~~
-- make multiple instances of Firefox work
-- solve issue of invalid window handles being used
-- remove desktops and window handles if they become invalid (due to program closure)
+- ~~make multiple instances of Firefox work~~
+- ~~solve issue of invalid window handles being used~~
+- ~~remove desktops and window handles if they become invalid (due to program closure)~~
+- improve logging
+- make usage easier
 
 ## Issues
-- Firefox uses different handles??? Multiple instances of Firefox cause handle problems
-- gets invalid window handles at times... (probably when closing a window/application)
+- Steam has a weird condition where it closes and immediately reopens in big picture, causing it to not be caught and moved correctly again
 
 ## Changelog
 ### 0.1.3
