@@ -7,7 +7,7 @@
 - Invalid handles crashing the program
 - Firefox not being able to have more than one instance
 ### Removed
-- removed unnecessary comments
+- unnecessary comments
 ## [0.1.3] - 2024-03-05
 ### Changed
 - Exit keybind from Q to Ctrl+Shift+F11
