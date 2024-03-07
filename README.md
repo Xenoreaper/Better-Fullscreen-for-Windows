@@ -16,6 +16,7 @@ Makes fullscreen applications utilize another virtual desktop instead of forcing
 - startup at boot
 - ignore list
 - potentially include modules to make usage easier
+- list of apps that should be handled like fullscreen windows (configurable)
 
 ## Issues
 - Steam has a weird condition where it closes and immediately reopens in big picture, causing it to not be caught and moved correctly again
@@ -26,4 +27,4 @@ see https://github.com/Xenoreaper/Better-Fullscreen-for-Windows/blob/main/CHANGE
 
 ## Includes
 ### [VirtualDesktopAccessor by Ciantic](https://github.com/Ciantic/VirtualDesktopAccessor)
-Copyright (c) 2015-2023 Jari Otto Oskari Pennanen
+> Copyright (c) 2015-2023 Jari Otto Oskari Pennanen
