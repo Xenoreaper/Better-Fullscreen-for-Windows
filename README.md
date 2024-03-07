@@ -19,6 +19,7 @@ Makes fullscreen applications utilize another virtual desktop instead of forcing
 
 ## Issues
 - Steam has a weird condition where it closes and immediately reopens in big picture, causing it to not be caught and moved correctly again
+- Some fullscreen windows don't get recognized as such (ie Helldivers2)
 
 ## Changelog
 see https://github.com/Xenoreaper/Better-Fullscreen-for-Windows/blob/main/CHANGELOG.md
