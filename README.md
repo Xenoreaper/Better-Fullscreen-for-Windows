@@ -17,10 +17,12 @@ Makes fullscreen applications utilize another virtual desktop instead of forcing
 - ignore list
 - potentially include modules to make usage easier
 - list of apps that should be handled like fullscreen windows (configurable)
+- possibly compatibility with win10
 
 ## Issues
 - Steam has a weird condition where it closes and immediately reopens in big picture, causing it to not be caught and moved correctly again
 - Some fullscreen windows don't get recognized as such (ie Helldivers2)
+- Only compatible with win11
 
 ## Changelog
 see https://github.com/Xenoreaper/Better-Fullscreen-for-Windows/blob/main/CHANGELOG.md
