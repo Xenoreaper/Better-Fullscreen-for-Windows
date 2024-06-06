@@ -18,6 +18,7 @@ Makes fullscreen applications utilize another virtual desktop instead of forcing
 - potentially include modules to make usage easier
 - list of apps that should be handled like fullscreen windows (configurable)
 - possibly compatibility with win10
+- compatibility with arm version of Windows
 
 ## Issues
 - Steam has a weird condition where it closes and immediately reopens in big picture, causing it to not be caught and moved correctly again
