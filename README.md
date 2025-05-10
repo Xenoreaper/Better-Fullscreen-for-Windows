@@ -1,4 +1,8 @@
 # Better-Fullscreen-for-Windows
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FXenoreaper%2FBetter-Fullscreen-for-Windows&label=Repository%20Visits&countColor=%230c7ebe&style=flat&labelStyle=none)
+![GitHub License](https://img.shields.io/github/license/Xenoreaper/Better-Fullscreen-for-Windows)
+![Python](https://img.shields.io/badge/Python-4B8BBE?style=flat&logo=python&logoColor=white)
+
 Makes fullscreen applications utilize another virtual desktop instead of forcing themselves over all other applications
 
 ## To Do
